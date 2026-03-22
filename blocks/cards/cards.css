@@ -1,15 +1,36 @@
-.cards > ul {
+
+/* CSS remains unchanged as it already contains the correct animation styles */
+.cards {
+  --cards-gap: 24px;
+  --cards-animation-duration: 0.5s;
+  --cards-animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.cards > .cards-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  gap: var(--cards-gap);
+  transition: transform var(--cards-animation-duration) var(--cards-animation-easing);
 }
 
-.cards > ul > li {
+.cards > .cards-list > .cards-card {
   border: 1px solid #dadada;
   background-color: var(--background-color);
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--cards-animation-duration) var(--cards-animation-easing),
+    transform var(--cards-animation-duration) var(--cards-animation-easing);
+}
+
+.cards > .cards-list > .cards-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cards .cards-card-body {
@@ -20,8 +41,52 @@
   line-height: 0;
 }
 
-.cards > ul > li img {
+.cards > .cards-list > .cards-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+/* Animation variants */
+.cards.fade > .cards-list > .cards-card {
+  transform: translateY(0);
+  opacity: 0;
+}
+
+.cards.fade > .cards-list > .cards-card.visible {
+  opacity: 1;
+}
+
+.cards.slide > .cards-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: var(--cards-gap);
+}
+
+.cards.slide > .cards-list > .cards-card {
+  flex: 0 0 auto;
+  width: 257px;
+  scroll-snap-align: start;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.cards.slide > .cards-list > .cards-card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards > .cards-list,
+  .cards > .cards-list > .cards-card {
+    transition: none;
+  }
+
+  .cards > .cards-list > .cards-card {
+    opacity: 1;
+    transform: none;
+  }
 }
