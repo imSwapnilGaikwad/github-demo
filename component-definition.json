@@ -57,8 +57,12 @@
           }
         },
         {
-          "title": "Cards",
-          "id": "component-definition-cards"
+          "title": "Accordion",
+          "id": "component-definition-accordion"
+        },
+        {
+          "title": "Banefits Card",
+          "id": "component-definition-banefits-card"
         },
         {
           "title": "Carousel Slider",

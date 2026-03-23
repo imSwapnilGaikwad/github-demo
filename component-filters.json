@@ -3,7 +3,8 @@
     "id": "section",
     "components": [
       "section",
-      "/cards",
+      "/accordion",
+      "/banefits-card",
       "/carousel-slider"
     ]
   }

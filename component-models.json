@@ -216,45 +216,138 @@
     ]
   },
   {
-    "id": "cards",
+    "id": "accordion",
     "fields": [
       {
-        "id": "cards",
+        "id": "accordion",
         "fields": [
+          {
+            "component": "text",
+            "name": "heading",
+            "label": "Section Heading",
+            "description": "Main heading for the accordion section.",
+            "valueType": "string"
+          },
           {
             "component": "multiselect",
             "name": "style",
             "label": "Variant",
-            "description": "Apply animation variant: Fade (sequential opacity) or Slide (horizontal scroll with slide-in effect).",
+            "description": "Apply visual variant to the accordion.",
             "valueType": "string",
             "options": [
               {
-                "name": "Fade Animation",
-                "value": "fade"
+                "name": "Default",
+                "value": "default"
               },
               {
-                "name": "Slide Animation",
-                "value": "slide"
+                "name": "Minimal",
+                "value": "minimal"
+              },
+              {
+                "name": "Bordered",
+                "value": "bordered"
               }
             ]
           }
         ]
       },
       {
-        "id": "card",
+        "id": "accordion-item",
         "fields": [
           {
-            "component": "reference",
-            "valueType": "string",
-            "name": "image",
-            "label": "Image",
-            "multi": false
+            "component": "text",
+            "name": "item-title",
+            "label": "Item Title",
+            "description": "Title for this accordion item.",
+            "valueType": "string"
           },
           {
             "component": "richtext",
-            "name": "text",
-            "value": "",
-            "label": "Text",
+            "name": "item-body",
+            "label": "Item Body",
+            "description": "Content for this accordion item.",
+            "valueType": "string"
+          },
+          {
+            "component": "boolean",
+            "name": "item-expanded",
+            "label": "Expanded by Default",
+            "description": "Should this item be expanded when the page loads?",
+            "valueType": "boolean"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "banefits-card",
+    "fields": [
+      {
+        "id": "banefits-card",
+        "fields": [
+          {
+            "component": "text",
+            "name": "section-label",
+            "label": "Section Label",
+            "description": "Small label above the heading (e.g., 'What you get').",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "section-heading",
+            "label": "Section Heading",
+            "description": "Main heading for the section (supports inline formatting like <em>).",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "section-subtitle",
+            "label": "Section Subtitle",
+            "description": "Supporting text below the heading.",
+            "valueType": "string"
+          },
+          {
+            "component": "multiselect",
+            "name": "style",
+            "label": "Variant",
+            "description": "Apply visual variants to the block.",
+            "valueType": "string",
+            "options": [
+              {
+                "name": "Dark",
+                "value": "dark"
+              },
+              {
+                "name": "Compact",
+                "value": "compact"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "banefits-card-item",
+        "fields": [
+          {
+            "component": "reference",
+            "name": "benefit-icon",
+            "label": "Benefit Icon",
+            "description": "SVG or image icon for the benefit card.",
+            "valueType": "string",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "name": "benefit-title",
+            "label": "Benefit Title",
+            "description": "Short title for this benefit (e.g., 'Financial Protection').",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "benefit-body",
+            "label": "Benefit Body",
+            "description": "Detailed description of the benefit.",
             "valueType": "string"
           }
         ]
