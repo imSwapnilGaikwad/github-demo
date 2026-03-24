@@ -5,7 +5,9 @@
       "section",
       "/accordion",
       "/banefits-card",
-      "/carousel-slider"
+      "/carousel-slider",
+      "/section-card",
+      "/text-block"
     ]
   }
 ]

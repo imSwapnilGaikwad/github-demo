@@ -67,6 +67,14 @@
         {
           "title": "Carousel Slider",
           "id": "component-definition-carousel-slider"
+        },
+        {
+          "title": "Section Card",
+          "id": "component-definition-section-card"
+        },
+        {
+          "title": "Text Block",
+          "id": "component-definition-text-block"
         }
       ]
     }

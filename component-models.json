@@ -479,5 +479,123 @@
         ]
       }
     ]
+  },
+  {
+    "id": "section-card",
+    "fields": [
+      {
+        "id": "section-card",
+        "fields": [
+          {
+            "component": "richtext",
+            "name": "title",
+            "label": "Section Title",
+            "description": "Main heading for the section.",
+            "valueType": "string"
+          }
+        ]
+      },
+      {
+        "id": "section-card-item",
+        "fields": [
+          {
+            "component": "reference",
+            "name": "icon",
+            "label": "Icon",
+            "description": "Icon image or SVG for the feature.",
+            "valueType": "string",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "name": "iconAlt",
+            "label": "Icon Alt Text",
+            "description": "Accessible description for the icon.",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "name": "title",
+            "label": "Feature Title",
+            "description": "Title of the feature.",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "description",
+            "label": "Feature Description",
+            "description": "Short description of the feature.",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "text-block",
+    "fields": [
+      {
+        "id": "text-block",
+        "fields": [
+          {
+            "component": "multiselect",
+            "name": "style",
+            "label": "Variant",
+            "description": "Layout or typographic variant (e.g. single-column, two-column, drop-cap, large-display).",
+            "valueType": "string",
+            "options": [
+              {
+                "name": "Single column (default)",
+                "value": "single-column"
+              },
+              {
+                "name": "Centered",
+                "value": "centered"
+              },
+              {
+                "name": "Two column",
+                "value": "two-column"
+              },
+              {
+                "name": "Drop cap",
+                "value": "drop-cap"
+              },
+              {
+                "name": "Pull quote",
+                "value": "pull-quote"
+              },
+              {
+                "name": "Large display",
+                "value": "large-display"
+              }
+            ]
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "eyebrow",
+            "label": "Eyebrow Label"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "heading",
+            "label": "Heading"
+          },
+          {
+            "component": "richtext",
+            "valueType": "string",
+            "name": "body",
+            "label": "Body Content"
+          },
+          {
+            "component": "richtext",
+            "valueType": "string",
+            "name": "pullQuote",
+            "label": "Pull Quote"
+          }
+        ]
+      }
+    ]
   }
 ]
