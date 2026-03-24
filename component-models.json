@@ -214,5 +214,388 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "accordion",
+    "fields": [
+      {
+        "id": "accordion",
+        "fields": [
+          {
+            "component": "text",
+            "name": "heading",
+            "label": "Section Heading",
+            "description": "Main heading for the accordion section.",
+            "valueType": "string"
+          },
+          {
+            "component": "multiselect",
+            "name": "style",
+            "label": "Variant",
+            "description": "Apply visual variant to the accordion.",
+            "valueType": "string",
+            "options": [
+              {
+                "name": "Default",
+                "value": "default"
+              },
+              {
+                "name": "Minimal",
+                "value": "minimal"
+              },
+              {
+                "name": "Bordered",
+                "value": "bordered"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "accordion-item",
+        "fields": [
+          {
+            "component": "text",
+            "name": "item-title",
+            "label": "Item Title",
+            "description": "Title for this accordion item.",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "item-body",
+            "label": "Item Body",
+            "description": "Content for this accordion item.",
+            "valueType": "string"
+          },
+          {
+            "component": "boolean",
+            "name": "item-expanded",
+            "label": "Expanded by Default",
+            "description": "Should this item be expanded when the page loads?",
+            "valueType": "boolean"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "banefits-card",
+    "fields": [
+      {
+        "id": "banefits-card",
+        "fields": [
+          {
+            "component": "text",
+            "name": "section-label",
+            "label": "Section Label",
+            "description": "Small label above the heading (e.g., 'What you get').",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "section-heading",
+            "label": "Section Heading",
+            "description": "Main heading for the section (supports inline formatting like <em>).",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "section-subtitle",
+            "label": "Section Subtitle",
+            "description": "Supporting text below the heading.",
+            "valueType": "string"
+          },
+          {
+            "component": "multiselect",
+            "name": "style",
+            "label": "Variant",
+            "description": "Apply visual variants to the block.",
+            "valueType": "string",
+            "options": [
+              {
+                "name": "Dark",
+                "value": "dark"
+              },
+              {
+                "name": "Compact",
+                "value": "compact"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "banefits-card-item",
+        "fields": [
+          {
+            "component": "reference",
+            "name": "benefit-icon",
+            "label": "Benefit Icon",
+            "description": "SVG or image icon for the benefit card.",
+            "valueType": "string",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "name": "benefit-title",
+            "label": "Benefit Title",
+            "description": "Short title for this benefit (e.g., 'Financial Protection').",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "benefit-body",
+            "label": "Benefit Body",
+            "description": "Detailed description of the benefit.",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "carousel-slider",
+    "fields": [
+      {
+        "id": "carousel-slider",
+        "fields": [
+          {
+            "component": "multiselect",
+            "name": "style",
+            "label": "Variant",
+            "description": "Carousel style: manual (default), auto-play, thumbnail-nav, full-screen, or product.",
+            "valueType": "string",
+            "options": [
+              {
+                "name": "Manual (default)",
+                "value": "manual"
+              },
+              {
+                "name": "Auto-play",
+                "value": "auto-play"
+              },
+              {
+                "name": "Thumbnail navigation",
+                "value": "thumbnail-nav"
+              },
+              {
+                "name": "Full screen",
+                "value": "full-screen"
+              },
+              {
+                "name": "Product",
+                "value": "product"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "carousel-slide",
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "image",
+            "label": "Slide Image",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "imageAlt",
+            "label": "Image Alt Text"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "heading",
+            "label": "Slide Heading"
+          },
+          {
+            "component": "richtext",
+            "valueType": "string",
+            "name": "description",
+            "label": "Slide Description"
+          },
+          {
+            "component": "aem-content",
+            "valueType": "string",
+            "name": "link",
+            "label": "CTA Link URL"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "linkTitle",
+            "label": "CTA Link Title (accessibility)"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "linkText",
+            "label": "CTA Button Label"
+          },
+          {
+            "component": "select",
+            "valueType": "string",
+            "name": "linkType",
+            "label": "CTA Button Style",
+            "options": [
+              {
+                "name": "Primary",
+                "value": "primary"
+              },
+              {
+                "name": "Secondary",
+                "value": "secondary"
+              },
+              {
+                "name": "Outline",
+                "value": "outline"
+              }
+            ]
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "price",
+            "label": "Price (product variant only)"
+          },
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "thumbnail",
+            "label": "Thumbnail Image (thumbnail-nav variant only)",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "thumbnailAlt",
+            "label": "Thumbnail Alt Text"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "section-card",
+    "fields": [
+      {
+        "id": "section-card",
+        "fields": [
+          {
+            "component": "richtext",
+            "name": "title",
+            "label": "Section Title",
+            "description": "Main heading for the section.",
+            "valueType": "string"
+          }
+        ]
+      },
+      {
+        "id": "section-card-item",
+        "fields": [
+          {
+            "component": "reference",
+            "name": "icon",
+            "label": "Icon",
+            "description": "Icon image or SVG for the feature.",
+            "valueType": "string",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "name": "iconAlt",
+            "label": "Icon Alt Text",
+            "description": "Accessible description for the icon.",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "name": "title",
+            "label": "Feature Title",
+            "description": "Title of the feature.",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "description",
+            "label": "Feature Description",
+            "description": "Short description of the feature.",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "text-block",
+    "fields": [
+      {
+        "id": "text-block",
+        "fields": [
+          {
+            "component": "multiselect",
+            "name": "style",
+            "label": "Variant",
+            "description": "Layout or typographic variant (e.g. single-column, two-column, drop-cap, large-display).",
+            "valueType": "string",
+            "options": [
+              {
+                "name": "Single column (default)",
+                "value": "single-column"
+              },
+              {
+                "name": "Centered",
+                "value": "centered"
+              },
+              {
+                "name": "Two column",
+                "value": "two-column"
+              },
+              {
+                "name": "Drop cap",
+                "value": "drop-cap"
+              },
+              {
+                "name": "Pull quote",
+                "value": "pull-quote"
+              },
+              {
+                "name": "Large display",
+                "value": "large-display"
+              }
+            ]
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "eyebrow",
+            "label": "Eyebrow Label"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "heading",
+            "label": "Heading"
+          },
+          {
+            "component": "richtext",
+            "valueType": "string",
+            "name": "body",
+            "label": "Body Content"
+          },
+          {
+            "component": "richtext",
+            "valueType": "string",
+            "name": "pullQuote",
+            "label": "Pull Quote"
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -1,0 +1,112 @@
+
+.section-card {
+  --section-card-bg: var(--color-bg, #161616);
+  --section-card-text-main: var(--color-text-main, #ffffff);
+  --section-card-text-muted: var(--color-text-muted, #a3a3a3);
+
+  padding: 5rem 1.5rem;
+  background-color: var(--section-card-bg);
+  display: flex;
+  justify-content: center;
+  color: var(--section-card-text-main);
+}
+
+.section-card__container {
+  width: 100%;
+  max-width: 1280px;
+}
+
+.section-card__header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.section-card__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--section-card-text-main);
+  margin: 0;
+}
+
+.section-card__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section-card-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section-card-feature__icon {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1.25rem;
+  color: var(--section-card-text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-card-feature__icon picture,
+.section-card-feature__icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.section-card-feature__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  color: var(--section-card-text-main);
+}
+
+.section-card-feature__desc {
+  font-size: var(--body-font-size-s, 0.9375rem);
+  line-height: 1.6;
+  color: var(--section-card-text-muted);
+  max-width: 280px;
+}
+
+.section-card-feature__desc p {
+  margin: 0;
+}
+
+/* Tablet Breakpoint */
+@media (min-width: 600px) {
+  .section-card__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 2rem;
+  }
+  
+  .section-card__title br {
+    display: none;
+  }
+  
+  .section-card__title {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 900px) {
+  .section-card__list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .section-card__title br {
+    display: block;
+  }
+}

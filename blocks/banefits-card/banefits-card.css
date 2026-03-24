@@ -1,0 +1,268 @@
+
+.banefits-card {
+  --banefits-navy: #07223D;
+  --banefits-navy-mid: #0E3A60;
+  --banefits-teal: #0D6E8A;
+  --banefits-teal-light: #1A8FA8;
+  --banefits-cream: #F7F4EF;
+  --banefits-cream-dark: #EDE9E0;
+  --banefits-white: #FFFFFF;
+  --banefits-text: #1C1C2E;
+  --banefits-text-muted: #5A6073;
+  --banefits-border: #D9D3C8;
+  --banefits-gap: 1.25rem;
+  --banefits-radius: 14px;
+  --banefits-padding: 1.75rem;
+  --banefits-title-color: var(--banefits-navy);
+  --banefits-title-hover-color: var(--banefits-teal);
+
+  font-family: var(--body-font-family, 'DM Sans', sans-serif);
+  color: var(--banefits-text);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.banefits-card .banefits-card-header {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.banefits-card .banefits-card-label {
+  font-size: var(--body-font-size-s, 0.9375rem);
+  font-weight: 500;
+  color: var(--banefits-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.banefits-card .banefits-card-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--banefits-navy);
+  margin: 0 0 0.75rem;
+}
+
+.banefits-card .banefits-card-heading em {
+  font-style: italic;
+  color: var(--banefits-teal);
+}
+
+.banefits-card .banefits-card-subtitle {
+  font-size: var(--body-font-size-m, 1.125rem);
+  line-height: 1.6;
+  color: var(--banefits-text-muted);
+  max-width: 800px;
+  margin: 0;
+}
+
+.banefits-card .banefits-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--banefits-gap);
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.banefits-card .banefits-card {
+  background: var(--banefits-white);
+  border: 1px solid var(--banefits-border);
+  border-radius: var(--banefits-radius);
+  padding: var(--banefits-padding);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: banefits-fadeUp 0.5s ease forwards;
+}
+
+.banefits-card .banefits-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(7, 34, 61, 0.1);
+  border-color: var(--banefits-teal-light);
+}
+
+.banefits-card .banefits-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--banefits-teal), var(--banefits-teal-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.banefits-card .banefits-card:hover::before {
+  transform: scaleX(1);
+}
+
+@keyframes banefits-fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.banefits-card .banefits-card:nth-child(1) { animation-delay: 0.05s; }
+.banefits-card .banefits-card:nth-child(2) { animation-delay: 0.1s; }
+.banefits-card .banefits-card:nth-child(3) { animation-delay: 0.15s; }
+.banefits-card .banefits-card:nth-child(4) { animation-delay: 0.2s; }
+.banefits-card .banefits-card:nth-child(5) { animation-delay: 0.25s; }
+.banefits-card .banefits-card:nth-child(6) { animation-delay: 0.3s; }
+.banefits-card .banefits-card:nth-child(7) { animation-delay: 0.35s; }
+.banefits-card .banefits-card:nth-child(8) { animation-delay: 0.4s; }
+.banefits-card .banefits-card:nth-child(9) { animation-delay: 0.45s; }
+.banefits-card .banefits-card:nth-child(10) { animation-delay: 0.5s; }
+
+.banefits-card .banefits-card-num {
+  font-family: var(--heading-font-family, 'Cormorant Garamond', serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--banefits-cream-dark);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  transition: color 0.25s ease;
+}
+
+.banefits-card .banefits-card-title {
+  font-size: 1.03125rem;
+  font-weight: 600;
+  color: var(--banefits-title-color);
+  margin: 0 0 0.625rem;
+  transition: color 0.25s ease;
+}
+
+.banefits-card .banefits-card-body {
+  font-size: 0.875rem;
+  color: var(--banefits-text-muted);
+  line-height: 1.65;
+  transition: color 0.25s ease;
+}
+
+.banefits-card .banefits-card-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.625rem;
+  background: linear-gradient(135deg, rgba(13, 110, 138, 0.1), rgba(13, 110, 138, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.banefits-card .banefits-card-icon svg,
+.banefits-card .banefits-card-icon img {
+  width: 1.375rem;
+  height: 1.375rem;
+  max-width: 100%;
+  max-height: 100%;
+  transition: opacity 0.25s ease;
+}
+
+/* Hover effects - hide icon and highlight title */
+.banefits-card .banefits-card:hover .banefits-card-icon {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.banefits-card .banefits-card:hover .banefits-card-title {
+  color: var(--banefits-title-hover-color);
+}
+
+.banefits-card .banefits-card:hover .banefits-card-num {
+  color: var(--banefits-teal-light);
+}
+
+/* Variant: Dark */
+.banefits-card.dark {
+  --banefits-navy: #FFFFFF;
+  --banefits-navy-mid: #E0E0E0;
+  --banefits-teal: #1A8FA8;
+  --banefits-teal-light: #26B5D3;
+  --banefits-cream: #07223D;
+  --banefits-cream-dark: #0E3A60;
+  --banefits-white: #0D6E8A;
+  --banefits-text: #FFFFFF;
+  --banefits-text-muted: #A0AEC0;
+  --banefits-border: #1A365D;
+  --banefits-title-color: #FFFFFF;
+  --banefits-title-hover-color: #26B5D3;
+
+  background-color: var(--banefits-cream);
+}
+
+/* Variant: Compact */
+.banefits-card.compact .banefits-card {
+  padding: 1.25rem;
+}
+
+.banefits-card.compact .banefits-card-num {
+  font-size: 2.5rem;
+}
+
+.banefits-card.compact .banefits-card-title {
+  font-size: 0.9375rem;
+}
+
+.banefits-card.compact .banefits-card-body {
+  font-size: 0.8125rem;
+}
+
+/* Section-level overrides */
+.section:has(.banefits-card) {
+  padding: 0;
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .banefits-card {
+    padding: 2.5rem;
+  }
+
+  .banefits-card .banefits-card-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .banefits-card {
+    padding: 3rem;
+  }
+
+  .banefits-card .banefits-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .banefits-card .banefits-card {
+    transition: none;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .banefits-card .banefits-card-icon,
+  .banefits-card .banefits-card-title,
+  .banefits-card .banefits-card-num {
+    transition: none;
+  }
+}
