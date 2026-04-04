@@ -1,0 +1,266 @@
+
+/* ─── 1. Block-scoped variables ─────────────────────────────────────────── */
+.accordion {
+  --accordion-bg: var(--background-color, #ffffff);
+  --accordion-card-bg: var(--light-color, #f5f5f7);
+  --accordion-card-radius: 20px;
+  --accordion-heading-color: var(--text-color, #1d1d1f);
+  --accordion-heading-font: var(--heading-font-family, roboto-condensed, sans-serif);
+  --accordion-heading-size: clamp(2rem, 4vw, 3rem);
+  --accordion-title-color: var(--text-color, #1d1d1f);
+  --accordion-title-size: 1.25rem;
+  --accordion-body-color: var(--dark-color, #505050);
+  --accordion-body-size: var(--body-font-size-xs, 1rem);
+  --accordion-divider-color: #d2d2d7;
+  --accordion-chevron-color: var(--text-color, #1d1d1f);
+  --accordion-focus-ring: var(--link-color, #3b63fb);
+  --accordion-card-padding: 2.5rem;
+  --accordion-transition-speed: 250ms;
+  --accordion-transition: var(--accordion-transition-speed) ease;
+}
+
+/* ─── 2. Block root ──────────────────────────────────────────────────────── */
+.accordion {
+  background-color: var(--accordion-bg);
+  padding: 2rem 1rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: var(--body-font-family, system-ui, sans-serif);
+  color: var(--accordion-heading-color);
+  box-sizing: border-box;
+}
+
+/* ─── 3. Block heading ───────────────────────────────────────────────────── */
+.accordion .accordion-heading {
+  font-family: var(--accordion-heading-font);
+  font-size: var(--accordion-heading-size);
+  font-weight: 700;
+  color: var(--accordion-heading-color);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+/* ─── 4. Card container ──────────────────────────────────────────────────── */
+.accordion .accordion-card {
+  background-color: var(--accordion-card-bg);
+  border-radius: var(--accordion-card-radius);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+/* ─── 5. Accordion list (left column) ───────────────────────────────────── */
+.accordion .accordion-list {
+  display: flex;
+  flex-direction: column;
+  padding: var(--accordion-card-padding);
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* ─── 6. Dividers ────────────────────────────────────────────────────────── */
+.accordion .accordion-divider {
+  border: none;
+  border-top: 1px solid var(--accordion-divider-color);
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+/* ─── 7. Accordion item ──────────────────────────────────────────────────── */
+.accordion .accordion-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── 8. Trigger button ──────────────────────────────────────────────────── */
+.accordion .accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.25rem 0;
+  cursor: pointer;
+  text-align: left;
+  color: var(--accordion-title-color);
+  font-family: var(--body-font-family, system-ui, sans-serif);
+  font-size: var(--accordion-title-size);
+  font-weight: 600;
+  line-height: 1.3;
+  transition: opacity var(--accordion-transition);
+  -webkit-tap-highlight-color: transparent;
+  min-height: 44px;
+}
+
+.accordion .accordion-trigger:hover {
+  opacity: 0.7;
+}
+
+.accordion .accordion-trigger:focus-visible {
+  outline: 2px solid var(--accordion-focus-ring);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.accordion .accordion-trigger-title {
+  flex: 1;
+}
+
+/* ─── 9. Chevron icon ────────────────────────────────────────────────────── */
+.accordion .accordion-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accordion-chevron-color);
+  width: 24px;
+  height: 24px;
+  transition: transform var(--accordion-transition);
+}
+
+.accordion .accordion-chevron svg {
+  display: block;
+  pointer-events: none;
+}
+
+/* ─── 10. Panel (collapsible body) ───────────────────────────────────────── */
+.accordion .accordion-panel {
+  overflow: hidden;
+}
+
+.accordion .accordion-panel[hidden] {
+  display: none;
+}
+
+.accordion .accordion-body {
+  padding: 0 0 1.5rem;
+  font-size: var(--accordion-body-size);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--accordion-body-color);
+}
+
+.accordion .accordion-body p {
+  margin: 0 0 0.75rem;
+}
+
+.accordion .accordion-body p:last-child {
+  margin-bottom: 0;
+}
+
+.accordion .accordion-body strong {
+  font-weight: 600;
+  color: var(--accordion-title-color);
+}
+
+.accordion .accordion-body a {
+  color: var(--link-color, #3b63fb);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.accordion .accordion-body a:hover {
+  color: var(--link-hover-color, #1d3ecf);
+}
+
+/* ─── 11. Image panel (right column) ─────────────────────────────────────── */
+.accordion .accordion-image-panel {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 0 0 var(--accordion-card-radius) var(--accordion-card-radius);
+}
+
+.accordion .accordion-image-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--accordion-transition);
+  pointer-events: none;
+}
+
+.accordion .accordion-image-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.accordion .accordion-image-slide picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.accordion .accordion-image-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ─── 12. Section-level override ─────────────────────────────────────────── */
+.section:has(.accordion) {
+  padding: 0;
+}
+
+/* ─── 13. Responsive — tablet (600px+) ───────────────────────────────────── */
+@media (min-width: 600px) {
+  .accordion {
+    padding: 2.5rem 2rem 3.5rem;
+  }
+
+  .accordion .accordion-heading {
+    margin-bottom: 2rem;
+  }
+
+  .accordion .accordion-image-panel {
+    min-height: 360px;
+  }
+}
+
+/* ─── 14. Responsive — desktop (900px+) ──────────────────────────────────── */
+@media (min-width: 900px) {
+  .accordion {
+    padding: 3rem 2rem 4rem;
+  }
+
+  .accordion .accordion-heading {
+    margin-bottom: 2rem;
+  }
+
+  .accordion .accordion-card {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 560px;
+  }
+
+  .accordion .accordion-list {
+    width: 42%;
+    flex-shrink: 0;
+    padding: var(--accordion-card-padding);
+    border-radius: var(--accordion-card-radius) 0 0 var(--accordion-card-radius);
+  }
+
+  .accordion .accordion-image-panel {
+    flex: 1;
+    min-height: unset;
+    border-radius: 0 var(--accordion-card-radius) var(--accordion-card-radius) 0;
+  }
+}
+
+/* ─── 15. Reduced motion ─────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .accordion .accordion-image-slide,
+  .accordion .accordion-trigger,
+  .accordion .accordion-chevron {
+    transition: none;
+  }
+}

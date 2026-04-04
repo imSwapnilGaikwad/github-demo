@@ -50,7 +50,11 @@
         "hero",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "accordion",
+        "cards-2",
+        "carousel-slider",
+        "image-block"
       ]
     }
   ]

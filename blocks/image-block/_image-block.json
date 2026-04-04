@@ -1,0 +1,65 @@
+{
+  "definitions": [
+    {
+      "title": "Image Block",
+      "id": "image-block",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Image Block",
+              "model": "image-block"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "image-block",
+      "fields": [
+        {
+          "component": "multiselect",
+          "valueType": "string",
+          "name": "style",
+          "label": "Variant",
+          "description": "Visual variant class names (e.g. full-width, rounded-corners). Can combine multiple.",
+          "options": [
+            { "name": "Full width", "value": "full-width" },
+            { "name": "Rounded corners", "value": "rounded-corners" },
+            { "name": "Lazy loaded (fade-in reveal)", "value": "lazy-loaded" },
+            { "name": "Zoom on hover", "value": "zoom-on-hover" }
+          ]
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt Text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "caption",
+          "label": "Caption"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "overlayText",
+          "label": "Overlay Text"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

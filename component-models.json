@@ -214,5 +214,299 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "accordion",
+    "fields": [
+      {
+        "id": "accordion",
+        "fields": [
+          {
+            "component": "text",
+            "name": "heading",
+            "label": "Block Heading",
+            "description": "Large heading displayed above the accordion card.",
+            "valueType": "string"
+          }
+        ]
+      },
+      {
+        "id": "accordion-item",
+        "fields": [
+          {
+            "component": "text",
+            "name": "item-title",
+            "label": "Accordion Title",
+            "description": "Title shown in the accordion trigger row.",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "item-body",
+            "label": "Accordion Body",
+            "description": "Expanded description text shown when this item is open.",
+            "valueType": "string"
+          },
+          {
+            "component": "reference",
+            "name": "item-image",
+            "label": "Panel Image",
+            "description": "Image displayed in the right panel when this accordion item is active.",
+            "valueType": "string",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "name": "item-imageAlt",
+            "label": "Panel Image Alt Text",
+            "description": "Accessible description for the panel image.",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cards-2",
+    "fields": [
+      {
+        "id": "cards-2",
+        "fields": []
+      },
+      {
+        "id": "cards-2-item",
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "card-image",
+            "label": "Card Image",
+            "description": "Thumbnail image displayed at the top of the card.",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "card-imageAlt",
+            "label": "Card Image Alt Text",
+            "description": "Accessible alt text for the card thumbnail image."
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "card-title",
+            "label": "Card Title",
+            "description": "Bold article or post title shown below the image."
+          },
+          {
+            "component": "richtext",
+            "valueType": "string",
+            "name": "card-body",
+            "label": "Card Body",
+            "description": "Short excerpt or description shown below the social share icons."
+          },
+          {
+            "component": "aem-content",
+            "valueType": "string",
+            "name": "card-link",
+            "label": "Card Link",
+            "description": "Destination URL for the READ MORE link and social share base."
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "card-linkText",
+            "label": "Card Link Text",
+            "description": "Visible label for the READ MORE link."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "carousel-slider",
+    "fields": [
+      {
+        "id": "carousel-slider",
+        "fields": [
+          {
+            "component": "multiselect",
+            "name": "style",
+            "label": "Variant",
+            "description": "Carousel style: manual (default), auto-play, thumbnail-nav, full-screen, or product.",
+            "valueType": "string",
+            "options": [
+              {
+                "name": "Manual (default)",
+                "value": "manual"
+              },
+              {
+                "name": "Auto-play",
+                "value": "auto-play"
+              },
+              {
+                "name": "Thumbnail navigation",
+                "value": "thumbnail-nav"
+              },
+              {
+                "name": "Full screen",
+                "value": "full-screen"
+              },
+              {
+                "name": "Product",
+                "value": "product"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "carousel-slide",
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "image",
+            "label": "Slide Image",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "imageAlt",
+            "label": "Image Alt Text"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "heading",
+            "label": "Slide Heading"
+          },
+          {
+            "component": "richtext",
+            "valueType": "string",
+            "name": "description",
+            "label": "Slide Description"
+          },
+          {
+            "component": "aem-content",
+            "valueType": "string",
+            "name": "link",
+            "label": "CTA Link URL"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "linkTitle",
+            "label": "CTA Link Title (accessibility)"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "linkText",
+            "label": "CTA Button Label"
+          },
+          {
+            "component": "select",
+            "valueType": "string",
+            "name": "linkType",
+            "label": "CTA Button Style",
+            "options": [
+              {
+                "name": "Primary",
+                "value": "primary"
+              },
+              {
+                "name": "Secondary",
+                "value": "secondary"
+              },
+              {
+                "name": "Outline",
+                "value": "outline"
+              }
+            ]
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "price",
+            "label": "Price (product variant only)"
+          },
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "thumbnail",
+            "label": "Thumbnail Image (thumbnail-nav variant only)",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "thumbnailAlt",
+            "label": "Thumbnail Alt Text"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "image-block",
+    "fields": [
+      {
+        "id": "image-block",
+        "fields": [
+          {
+            "component": "multiselect",
+            "valueType": "string",
+            "name": "style",
+            "label": "Variant",
+            "description": "Visual variant class names (e.g. full-width, rounded-corners). Can combine multiple.",
+            "options": [
+              {
+                "name": "Full width",
+                "value": "full-width"
+              },
+              {
+                "name": "Rounded corners",
+                "value": "rounded-corners"
+              },
+              {
+                "name": "Lazy loaded (fade-in reveal)",
+                "value": "lazy-loaded"
+              },
+              {
+                "name": "Zoom on hover",
+                "value": "zoom-on-hover"
+              }
+            ]
+          },
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "image",
+            "label": "Image",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "imageAlt",
+            "label": "Image Alt Text"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "caption",
+            "label": "Caption"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "overlayText",
+            "label": "Overlay Text"
+          }
+        ]
+      }
+    ]
   }
 ]
