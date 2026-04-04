@@ -1,0 +1,157 @@
+
+{
+  "definitions": [
+    {
+      "title": "Product Carousel",
+      "id": "product-carousel",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "product-carousel",
+              "model": "product-carousel",
+              "filter": "product-carousel"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Product Carousel Item",
+      "id": "product-carousel-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "product-carousel-item",
+              "model": "product-carousel-item",
+              "filter": "product-carousel"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "product-carousel",
+      "fields": [
+        {
+          "component": "text",
+          "name": "heading",
+          "label": "Section Heading",
+          "description": "Main heading displayed above the carousel.",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "compare-link",
+          "label": "Compare Link",
+          "description": "URL for the 'Compare all models' link.",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "compare-linkText",
+          "label": "Compare Link Text",
+          "description": "Visible label for the compare link.",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "product-carousel-item",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "product-image",
+          "label": "Product Image",
+          "description": "Hero image for the product card.",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "badge-text",
+          "label": "Badge Text",
+          "description": "Optional badge label (e.g. 'New'). Leave empty if not needed.",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "product-name",
+          "label": "Product Name",
+          "description": "Name of the product (e.g. iPhone 17 Pro).",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description",
+          "description": "Short tagline or description for the product.",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "price-primary",
+          "label": "Primary Price",
+          "description": "Main price line (e.g. From ₹134900.00‡).",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "price-secondary",
+          "label": "Secondary Price",
+          "description": "Monthly price line (e.g. or ₹21650.00/mo. for 6 mo.‡‡).",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "cta-primary",
+          "label": "Primary CTA Link",
+          "description": "URL for the primary CTA button.",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "cta-primaryText",
+          "label": "Primary CTA Text",
+          "description": "Label for the primary CTA button (e.g. Learn more).",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "cta-secondary",
+          "label": "Secondary CTA Link",
+          "description": "URL for the secondary CTA link.",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "cta-secondaryText",
+          "label": "Secondary CTA Text",
+          "description": "Label for the secondary CTA link (e.g. Buy).",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "color-swatches",
+          "label": "Color Swatches",
+          "description": "Comma-separated hex color values for the color dot selectors (e.g. #e8a87c,#3a3a3c,#f5f5f7).",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "product-carousel",
+      "components": [
+        "product-carousel-item"
+      ]
+    }
+  ]
+}
+  
